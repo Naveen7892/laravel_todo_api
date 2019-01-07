@@ -1,0 +1,25 @@
+Tutorial site
+https://laravel.com/docs/5.1/quickstart
+
+Composer download link
+https://getcomposer.org/
+
+How to run Laravel PHP
+https://gist.github.com/hootlex/da59b91c628a6688ceb1
+
+- To upload laravel project in 000webhost
+https://www.000webhost.com/forum/t/deploy-laravel-project-into-000webhost-site/127323
+
+==========================================
+- 000webhost supports upto PHP 7.1. 
+- Laravel 5.1 requires PHP 5.5.9 or greater.
+- PHP 7.0.3 is installed in Office system. (>> php -v)
+- Download composer 1.8.0 and install.
+	- Refer c:\xampp\php\php.exe for composer to use (XAMPP is already installed)
+	- Composer location: C:\Users\naveenkumar\composer
+	- PHP version 7.0.3: C:\xampp\php\php.exe
+	- Add to User path: C:\Users\naveenkumar\composer
+    - Remove from User path: C:\Users\naveenkumar\AppData\Local\ComposerSetup\bin
+
+- User Visual Studio Code
+- Composer installed Laravel framework 5.5.* for the project created in Office system.

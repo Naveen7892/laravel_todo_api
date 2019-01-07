@@ -1,0 +1,64 @@
+Tutorial site
+https://arjunphp.com/create-rest-laravel-framework/
+
+=======================================================
+
+>> composer create-project laravel/laravel todo --prefer-dist
+
+>> cd todo
+
+>> php artisan serve
+
+- Configure .env and create a database in MySQL accordingly
+
+    >> create database laravel_todo
+    >> use laravel_todo
+
+>> php artisan make:migration create_tasks_table --create=tasks
+
+>> php artisan make:seeder UsersTableSeeder 
+>> php artisan make:seeder TasksTableSeeder
+
+>> php artisan make:model Task
+    (Prob)
+    Migration table created successfully.
+
+    [Illuminate\Database\QueryException]
+    SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`))
+
+    [PDOException]
+    SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes
+
+    (Sol)
+    Edit AppServiceProvider.php with,
+
+        use Illuminate\Support\Facades\Schema;
+        public function boot()
+        {
+            Schema::defaultStringLength(191);
+        }
+
+>> php artisan migrate:fresh
+
+>> php artisan db:seed
+
+>> composer require ellipsesynergie/api-response
+Using version ^0.15.0 for ellipsesynergie/api-response
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 2 installs, 0 updates, 0 removals
+  - Installing league/fractal (0.17.0): Downloading (100%)
+  - Installing ellipsesynergie/api-response (0.15.0): Downloading (100%)
+league/fractal suggests installing pagerfanta/pagerfanta (Pagerfanta Paginator)
+league/fractal suggests installing zendframework/zend-paginator (Zend Framework Paginator)
+Writing lock file
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover
+Discovered Package: fideloper/proxy
+Discovered Package: laravel/tinker
+Discovered Package: nesbot/carbon
+Package manifest generated successfully.
+
+>> 
